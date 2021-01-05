@@ -1,4 +1,4 @@
-const eqArrays = (arrayOne, arrayTwo)=> {
+const eqArrays = (arrayOne, arrayTwo) => {
   if (JSON.stringify(arrayOne) === JSON.stringify(arrayTwo)) {
     return true;
   } else {
@@ -6,7 +6,7 @@ const eqArrays = (arrayOne, arrayTwo)=> {
   }
 };
 
-const assertArraysEqual = function(actual, expected) {
+const assertArraysEqual = (actual, expected) => {
   eqArrays(actual, expected) === true ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) : console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
 };
 
