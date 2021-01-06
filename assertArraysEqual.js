@@ -7,7 +7,7 @@ const eqArrays = (arrayOne, arrayTwo) => {
 };
 
 const assertArraysEqual = (actual, expected) => {
-  eqArrays(actual, expected) === true ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) : console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+  actual === expected ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) : console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
 };
 
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
+assertArraysEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
