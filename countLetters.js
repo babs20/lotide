@@ -2,11 +2,11 @@ const assertEqual = function (actual, expected) {
   actual === expected ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) : console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
 };
 
-const countLeters = sentence => {
+const countLeters = function(sentence) {
   if (typeof sentence !== 'string') {
     return 'Please enter a string!';
   }
-  
+
   let letterTally = {};
   let noSpaces = sentence.split(' ');
   let stringInit = noSpaces.join('').toLowerCase();
