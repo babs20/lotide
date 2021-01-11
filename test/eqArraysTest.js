@@ -1,12 +1,22 @@
 const eqArrays = require('../eqArrays');
 const expect = require('chai').expect;
 
-describe('#eqObjects', () => {
-  it(`returns true that ab and ba are equal`, () => {
-    const ab = { a: "1", b: "2" };
-    const ba = { b: "2", a: "1" };
-    const results = eqArrays(ab, ba);
+describe('#eqArrays', () => {
+  it(`returns false that both arrays are not equal`, () => {
+    const results = eqArrays(["1", "2", "3"], ["1", "2", 3]);
+    expect(results).to.equal(false);
+  });
+  it(`returns true that both arrays are equal`, () => {
+    const results = eqArrays([[2, 3], [4]], [[2, 3], [4]]);
     expect(results).to.equal(true);
+  });
+  it(`returns false that both arrays are not equal`, () => {
+    const results = eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]);
+    expect(results).to.equal(false);
+  });
+  it(`returns false that both arrays are not equal`, () => {
+    const results = eqArrays([[2, 3], [4]], [[2, 3], 4]);
+    expect(results).to.equal(false);
   });
 });
 
