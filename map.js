@@ -20,6 +20,8 @@ const map = (array, callback) => {
   return results;
 };
 
-assertArraysEqual(map(words, word => word[0]), [ 'g', 'c', 't', 'm', 't' ]);
-assertArraysEqual(map(words, word => word[word.length - 1]), [ 'd', 'l', 'o', 'r', 'm' ]);
-assertArraysEqual(map(words, word => word[word.length - 2]), [ 'n', 'o', 't', 'o', 'o' ]);
+module.exports = map;
+
+assertArraysEqual(map(words, word => word[0]), ['g', 'c', 't', 'm', 't']);
+assertArraysEqual(map(words, word => word[word.length - 1]), ['d', 'l', 'o', 'r', 'm']);
+assertArraysEqual(map(words, word => word[word.length - 2]), ['n', 'o', 't', 'o', 'o']);

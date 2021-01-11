@@ -26,6 +26,8 @@ const letterPositions = function (sentence) {
   return results;
 };
 
+module.exports = letterPositions;
+
 
 let results = letterPositions('hell lo');
 assertArraysEqual(results.h, [0]);

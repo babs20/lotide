@@ -1,4 +1,4 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   actual === expected ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) : console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
 };
 
@@ -12,7 +12,7 @@ const eqArrays = (arrayOne, arrayTwo) => {
 
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
-const eqObjects = function(object1, object2) {
+const eqObjects = function (object1, object2) {
   if (Object.keys(object1).length === Object.keys(object2).length) { //check length
     for (const key in object1) { //loop through pairs
       if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
@@ -24,7 +24,7 @@ const eqObjects = function(object1, object2) {
         if (!eqObjects(object1[key], object2[key])) {
           return false;
         }
-      // eslint-disable-next-line no-prototype-builtins
+        // eslint-disable-next-line no-prototype-builtins
       } else if (!object2.hasOwnProperty(key) || (object1[key] !== object2[key])) { // check if keys and values match
         return false;
       }
@@ -32,6 +32,8 @@ const eqObjects = function(object1, object2) {
     return true;
   } return false; // if not the same length === false
 };
+
+module.exports = eqObjects;
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
