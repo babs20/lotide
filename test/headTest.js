@@ -1,6 +1,5 @@
 // const assertEqual = require('../assertEqual');
 const head = require('../head.js');
-const assert = require('chai').assert;
 const expect = require('chai').expect;
 
 describe('#head', () => {
