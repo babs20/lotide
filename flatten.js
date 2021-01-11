@@ -12,13 +12,13 @@ const assertArraysEqual = (actual, expected) => {
 
 const flatten = array => {
   let flattenedArray = [];
-  for (let i = 0; i < array.length; i++) {
-    if (Array.isArray(array[i])) {
-      for (let j = 0; j < array[i].length; j++) {
-        flattenedArray.push(array[i][j]);
+  for (const item of array) {
+    if (Array.isArray(item)) {
+      for (let j = 0; j < item.length; j++) {
+        flattenedArray.push(item[j]);
       }
     } else {
-      flattenedArray.push(array[i]);
+      flattenedArray.push(item);
     }
   }
   return flattenedArray;
@@ -26,4 +26,5 @@ const flatten = array => {
 
 module.exports = flatten;
 
-assertArraysEqual(flatten([1, 2, [3, 4, 5, 6, 6, 7], 5, []]), [1, 2, 3, 4, 5, 6, 6, 7, 5]);
+// assertArraysEqual(
+console.log(flatten([1, 2, [3, 4, 5, 6, 6, 7], 5, []])); // , [1, 2, 3, 4, 5, 6, 6, 7, 5]);
